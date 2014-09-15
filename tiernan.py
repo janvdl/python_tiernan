@@ -1,11 +1,11 @@
 ######              Find Cycles and Output Them              ######
 #                   Use Tiernan's method                          #
-#      number_of_nodes should be determined programmatically      #
+#      N should be determined programmatically      #
 number_of_nodes = 5
-G = [[] for x in xrange(number_of_nodes)]
 N = number_of_nodes
+G = [[] for x in xrange(N)]
 P = []
-H = [[] for x in xrange(number_of_nodes)]
+H = [[] for x in xrange(N)]
 k = 0
 P.append(k)
 
@@ -14,8 +14,8 @@ def EC1():
 
     #Here G is an example graph, where every node is adjacent to every other
     #node, substitute G with your own graph
-    for i in xrange(0, number_of_nodes):
-        for j in xrange(0, number_of_nodes):
+    for i in xrange(0, N):
+        for j in xrange(0, N):
             if (i != j):
                 G[i].append(j)
     print G
@@ -55,12 +55,12 @@ def EC4():
         EC2()
 
 def EC5():
-    if P[0] == number_of_nodes - 1:
+    if P[0] == N - 1:
         EC6()
     else:
         P[0] = P[0] + 1
         k = 0
-        H = [[] for x in xrange(number_of_nodes)]
+        H = [[] for x in xrange(N)]
         EC2()
 
 def EC6():
